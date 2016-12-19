@@ -30,6 +30,7 @@ dss.to_netcdf('myfile.nc', encoding=enc)
 ```python
 import geopandas as gpd
 import fiona
+import salem
 
 def filter(filename, colname, colvalue):
     """Filter the rows accordind to colname.value == colvalue"""
@@ -37,6 +38,6 @@ def filter(filename, colname, colvalue):
         for i, feature in enumerate(source):
             if feature['properties'][colname] == colvalue:
                 yield feature
-                
+gdf.crs = salem.wgs84.srs
 gdf = gpd.GeoDataFrame.from_features(filter('/path/to/a/big_file.shp', 'Continent', 'Asia'))
 ```
