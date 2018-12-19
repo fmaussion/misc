@@ -22,10 +22,10 @@ eggs
 
 # specific
 *.cache
+.nbgrader.log
 baseline/
 *.lock
 oggm/tests/tmp_*
-*.html
 docs/glacierdir.rst
 docs/index.rst
 docs/_build
